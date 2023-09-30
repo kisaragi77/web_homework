@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教程网站</title>
+    <style>
+        header {
+            background-color: darkcyan;
+            color: black;
+            text-align: center;
+            padding: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            letter-spacing: 8px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        #chapter-list {
+            width: 30%;
+            padding: 20px;
+            background-color: burlywood;
+            height: 500px;
+            overflow-y: scroll;
+        }
+
+        #chapter-content {
+            background-color: blanchedalmond;
+            width: 70%;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<!-- 添加标题 -->
+<header>我的学习网站</header>
+<div class="container">
+    <div id="chapter-list">
+        <h2>章节列表</h2>
+        <ul>
+            <li><a href="#" onclick="showChapter(1);">HTML</a></li>
+            <li><a href="#" onclick="showChapter(2);">CSS</a></li>
+            <li><a href="#" onclick="showChapter(3);">Javascript</a></li>
+            <!-- 添加更多章节链接 -->
+        </ul>
+    </div>
+    <div id="chapter-content">
+        <h2>章节内容</h2>
+        <div id="chapter1" style="display:none;">
+            <h3>1.HTML</h3>
+            <p>这是章节 1 的内容。</p>
+        </div>
+        <div id="chapter2" style="display:none;">
+            <h3>2.CSS</h3>
+            <p>这是章节 2 的内容。</p>
+        </div>
+        <div id="chapter3" style="display:none;">
+            <h3>3.Javascript</h3>
+            <p>这是章节 3 的内容。</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showChapter(chapterNumber) {
+        for (let i = 1; i <= 3; i++) {
+            document.getElementById('chapter' + i).style.display = 'none';
+        }
+        document.getElementById('chapter' + chapterNumber).style.display = 'block';
+    }
+</script>
+</body>
+</html>
